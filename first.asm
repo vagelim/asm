@@ -7,9 +7,11 @@ repeat:
     mov al,[bx]
     test al,al
     je end
-    mov ah,0x0e ; prints in colors
-    mov bx,0x00f; this output all uparrows in an infinite loop. this is why bx was pushed/popped
+    push bx
+    mov ah,0x0a
+    mov bx,0x000f
     int 0x10
+    pop bx
     inc bx
     jmp repeat
 
