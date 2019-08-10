@@ -7,11 +7,9 @@ repeat:
     mov al,[bx]
     test al,al
     je end
-    push bx
     mov ah,0x0e
     mov bx,0x000f
     int 0x10
-    pop bx
     inc bx
     jmp repeat
 
